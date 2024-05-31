@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(3, 10, 14, 0.498), rgb(194, 106, 6));
+        }
+        
+        .box {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+        }
+        
+        fieldset {
+            border: 3px solid rgb(0, 0, 0);
+        }
+        
+        legend {
+            border: 3px solid rgb(0, 0, 1);
+            padding: 10px;
+            text-align: center;
+            background-color: dodgerblue;
+            border-radius: 8px;
+        }
+        
+        .inputBox {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        
+        .labelInput {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        
+        .button {
+            background-image: linear-gradient(to right, rgb(2, 3, 3), rgb(221, 133, 17));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .button:hover {
+            background-image: linear-gradient(to right, rgb(251, 252, 253), rgb(222, 125, 13));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <fieldset>
+            <legend><b>Confirmação de Cadastro</b></legend>
+            <br>
+            <div class="inputBox">
+                <label class="labelInput">Nome Completo:</label>
+                <br>
+                <span class="inputUser" id="confNome"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Email:</label>
+                <br>
+                <span class="inputUser" id="confEmail"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Telefone:</label>
+                <br>
+                <span class="inputUser" id="confTelefone"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Sexo:</label>
+                <br>
+                <span class="inputUser" id="confGenero"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Data de Nascimento:</label>
+                <br>
+                <span class="inputUser" id="confDataNascimento"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Cidade:</label>
+                <br>
+                <span class="inputUser" id="confCidade"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Estado:</label>
+                <br>
+                <span class="inputUser" id="confEstado"></span>
+                <br>
+            </div>
+            <div class="inputBox">
+                <label class="labelInput">Endereço</label>
+                <br>
+                <span class="inputUser" id="confEndereco"></span>
+                <br>
+            </div>
+            <br>
+            <button class="button" onclick="prosseguir()">Prosseguir</button>
+        </fieldset>
+    </div>
+
+    <script>
+        // Recupera os dados do localStorage
+        document.getElementById('confNome').textContent = localStorage.getItem('nome');
+        document.getElementById('confEmail').textContent = localStorage.getItem('email');
+        document.getElementById('confTelefone').textContent = localStorage.getItem('telefone');
+        document.getElementById('confGenero').textContent = localStorage.getItem('genero');
+        document.getElementById('confDataNascimento').textContent = localStorage.getItem('dataNascimento');
+        document.getElementById('confCidade').textContent = localStorage.getItem('cidade');
+        document.getElementById('confEstado').textContent = localStorage.getItem('estado');
+        document.getElementById('confEndereco').textContent = localStorage.getItem('endereco');
+
+        function prosseguir() {
+            alert("Cadastro confirmado! Prosseguindo para a próxima etapa...");
+            // Aqui você pode redirecionar para outra página ou realizar outra ação
+            window.location.href = 'produtos.html';
+        }
+    </script>
+
+</body>
+
+</html>
